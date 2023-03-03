@@ -32,10 +32,10 @@ public class TimeV1 {
     
     
     public int Thehours(){
-        return minute;
+        return hour;
     }
     public int Theminutes(){
-        return hour;
+        return minute;
     }
     
     public int Theseconds(){
