@@ -1,4 +1,5 @@
 public class TimeV2 {
+    // TODO: the README stated that you should only be using one instance variable for this class, which represents the number of seconds since midnight. You still have three instance variables.
     private int hour;
     private int minute;        
     private int second;
