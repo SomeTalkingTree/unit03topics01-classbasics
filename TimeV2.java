@@ -1,36 +1,54 @@
 public class TimeV2 {
-    private int hour;
-    private int minute;        
-    private int second;
+    private int alltime;
     
     public TimeV2(int Thehours,int Theminutes,int Theseconds){
-        hour =  Thehours;
-        minute = Theminutes;
-        second = Theseconds;
+        alltime +=  Thehours*3600;
+        alltime += Theminutes*60;
+        alltime += Theseconds;
     }
     
     public String toString(){
         String fulltime ="";
-        int thehour = hour*3600;
-        int theminutes = minute*60;
-        int thesecond = thehour+theminutes+second;
-        fulltime+= "00:00:";
-        fulltime+= thesecond;
+        int totaltime = alltime;
+        
+        int placenum =0;
+        int totalhour = alltime/3600;
+        placenum = alltime%3600;
+        totaltime = totaltime-(totalhour*3600)+(totaltime%3600);
+        int totalminute = totaltime/60;
+        totaltime = totaltime-(totalminute*60)+(totaltime%60);
+        int totalsecond = totaltime;
+        if(totalsecond>59){
+            totalminute++;
+            totalsecond-=60;
+        }
+        if(totalminute>59){
+            totalhour++;
+            totalminute-=60;
+        }
+        
+
+        if(totalhour<10){
+            fulltime = fulltime+"0";
+        }
+            fulltime = fulltime+totalhour+":";
+        if(totalminute<10){
+            fulltime = fulltime+"0";
+        }
+        fulltime = fulltime+totalminute+":";
+        if(totalsecond<10){
+            fulltime = fulltime+"0";
+        }
+        fulltime = fulltime+totalsecond;
             
         return fulltime;
     }
     
     
     public int Thehours(){
-        return hour;
-    }
-    public int Theminutes(){
-        return minute;
+        return alltime;
     }
     
-    public int Theseconds(){
-        return second;
-    }
     public static void main(String[] args) {
         TimeV2 d1 = new TimeV2(5,15,19);
         TimeV2 d2 = new TimeV2(6,2,26);
