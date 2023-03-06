@@ -6,10 +6,11 @@ public class TimeV1 {
     private int minute;        
     private int second;
     
-    public TimeV1(int Thehours,int Theminutes,int Theseconds){
-        hour =  Thehours;
-        minute = Theminutes;
-        second = Theseconds;
+    // NOTE: variables shouldn't start with an uppercase letter (use camelCase instead of PascalCase)
+    public TimeV1(int theHours,int theMinutes,int theSeconds){
+        hour =  theHours;
+        minute = theMinutes;
+        second = theSeconds;
     }
     
     public String toString(){
@@ -53,3 +54,5 @@ public class TimeV1 {
     }
 }
 //javac TimeV1.java; java TimeV1
+
+// good
