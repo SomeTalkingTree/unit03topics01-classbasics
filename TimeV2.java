@@ -59,5 +59,6 @@ public class TimeV2 {
             System.out.println(Times);
         } 
     }
+    
 }
 //javac TimeV2.java; java TimeV2
